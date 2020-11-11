@@ -8,12 +8,3 @@ fn main() {
     server.run();
     // println!("{:?}", Method);
 }
-// mod http {
-//     pub mod request {
-       
-//     }
-   
-//     pub mod method {
-       
-//     }
-// }
