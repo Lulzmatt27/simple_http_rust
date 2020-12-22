@@ -13,6 +13,20 @@ pub struct Request<'buf> {
       method: Method,
 }
 
+impl<'buf> Request<'buf> {
+      pub fn path(&self) ->&str{
+            &self.path
+      }
+
+      pub fn method(&self) ->&Method{
+            &self.method
+      }
+
+      pub fn query_string(&self) ->Option<&QueryString>{
+            self.query_string.as_ref()
+      }
+}
+
 impl<'buf> TryFrom<&'buf [u8]> for Request<'buf> {
       type Error = ParseError;
       // GET /search?name=test&sort=1 HTTP/1.1\r\n...HEADERS...
